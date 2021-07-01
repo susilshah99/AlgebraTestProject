@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
-import { Checkbox, Col, Form, Input, notification, Row, Typography,Button } from "antd";
+import { Checkbox, Col, Form, Input, notification, Row, Typography, Button } from "antd";
 import { useForm } from "antd/lib/form/Form";
 
 // import ActionButton from "../../../components/ActionButton";
 import logo from "../../../image/login.jpg";
-
 
 const { Title, Text } = Typography;
 
@@ -77,7 +76,6 @@ function LoginForm(props: SignUpFormProps) {
   const [form] = useForm();
   const { setAnimation, animation } = props;
 
-
   useEffect(() => {}, []);
   return (
     <StyledLoginForm>
@@ -96,7 +94,6 @@ function LoginForm(props: SignUpFormProps) {
             label="Username"
             name="email"
             rules={[{ required: true, message: "Please enter your username!" }]}
-         
           >
             <StyledInput placeholder="enter your username" />
           </Form.Item>
@@ -104,7 +101,6 @@ function LoginForm(props: SignUpFormProps) {
             label="Password"
             name="password"
             rules={[{ required: true, message: "Please enter your Password!" }]}
-        
           >
             <StyledPassword type="password" placeholder="enter your password" />
           </Form.Item>
@@ -188,7 +184,7 @@ function LoginForm(props: SignUpFormProps) {
               >
                 Log In
               </ActionButton> */}
-              <Button type="primary" >Log In</Button>
+              <Button type="primary">Log In</Button>
             </Col>
           </Row>
           <Row

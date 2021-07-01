@@ -1,6 +1,6 @@
-import React from 'react'
-import { Table} from "antd";
-import styled from '@emotion/styled'
+import React from "react";
+import { Table } from "antd";
+import styled from "@emotion/styled";
 import Text from "antd/lib/typography/Text";
 
 const StyledTable = styled(Table)`
@@ -15,7 +15,6 @@ const StyledTable = styled(Table)`
   .ant-table-tbody > tr > td {
     border: none;
     padding: 12px 16px;
-
   }
 
   .ant-table-row {
@@ -36,91 +35,89 @@ const StyledTable = styled(Table)`
   }
 `;
 
-const Details=styled("div")`
-padding:10px 0px 20px 0px;
+const Details = styled("div")`
+  padding: 10px 0px 20px 0px;
+`;
 
-`
-
-const StudentDashboard=()=>{
-
-                const dataSource = [
-  {
-    key: '1',
-    name: 'Mike',
-    age: 32,
-    address: '10 Downing Street',
-    questions:'5',
-    totaltime:'15s'
-  },
-  {
-    key: '2',
-    name: 'John',
-    age: 42,
-    address: '10 Downing Street',
-questions:'5',
-    totaltime:'15s'
-  },
+const StudentDashboard = () => {
+  const dataSource = [
     {
-    key: '2',
-    name: 'John',
-    age: 42,
-    address: '10 Downing Street',
-questions:'5',
-    totaltime:'15s'
-  },
+      key: "1",
+      name: "Mike",
+      age: 32,
+      address: "10 Downing Street",
+      questions: "5",
+      totaltime: "15s",
+    },
     {
-    key: '2',
-    name: 'John',
-    age: 42,
-    address: '10 Downing Street',
-questions:'5',
-    totaltime:'15s'
-  },
+      key: "2",
+      name: "John",
+      age: 42,
+      address: "10 Downing Street",
+      questions: "5",
+      totaltime: "15s",
+    },
     {
-    key: '2',
-    name: 'John',
-    age: 42,
-    address: '10 Downing Street',
-questions:'5',
-    totaltime:'15s'
-  },
-];
+      key: "2",
+      name: "John",
+      age: 42,
+      address: "10 Downing Street",
+      questions: "5",
+      totaltime: "15s",
+    },
+    {
+      key: "2",
+      name: "John",
+      age: 42,
+      address: "10 Downing Street",
+      questions: "5",
+      totaltime: "15s",
+    },
+    {
+      key: "2",
+      name: "John",
+      age: 42,
+      address: "10 Downing Street",
+      questions: "5",
+      totaltime: "15s",
+    },
+  ];
 
-                const columns = [
-  {
-    title: 'Algebra Topic',
-    dataIndex: 'name',
-    key: 'name',
-  },
-  {
-    title: 'Attempted',
-    dataIndex: 'age',
-    key: 'age',
-  },
-  {
-    title: 'Passed',
-    dataIndex: 'address',
-    key: 'address',
-  },
+  const columns = [
     {
-    title: 'Question Attempted',
-    dataIndex: 'questions',
-    key: 'address',
-  },
-     {
-    title: 'Total time',
-    dataIndex: 'totaltime',
-    key: 'address',
-  },
-];
+      title: "Algebra Topic",
+      dataIndex: "name",
+      key: "name",
+    },
+    {
+      title: "Attempted",
+      dataIndex: "age",
+      key: "age",
+    },
+    {
+      title: "Passed",
+      dataIndex: "address",
+      key: "address",
+    },
+    {
+      title: "Question Attempted",
+      dataIndex: "questions",
+      key: "address",
+    },
+    {
+      title: "Total time",
+      dataIndex: "totaltime",
+      key: "address",
+    },
+  ];
 
-                return(
-                                <React.Fragment>
-                                  <Details>
-                                    <Text></Text>
-                                  </Details>
-                                         <StyledTable pagination={false} dataSource={dataSource} columns={columns}/>
-                                </React.Fragment>
-                )
-}
-export default StudentDashboard
+  return (
+    <React.Fragment>
+      <Details>
+        <Text></Text>
+      </Details>
+      <StyledTable pagination={false} dataSource={dataSource} columns={columns} />
+    </React.Fragment>
+  );
+};
+export default StudentDashboard;

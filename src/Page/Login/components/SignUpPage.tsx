@@ -9,7 +9,7 @@ import {
   notification,
   Modal,
   Select,
-  Button
+  Button,
 } from "antd";
 import styled from "@emotion/styled";
 // import ActionButton from "../../../components/ActionButton";
@@ -59,7 +59,7 @@ const StyledContact = styled(Input)`
 
 const StyledForm = styled(Form)`
   height: 100%;
-  padding-bottom:10px;
+  padding-bottom: 10px;
   .ant-form-item {
     margin-bottom: 0px;
   }
@@ -82,7 +82,7 @@ const StyledCheckbox = styled(Checkbox)`
   }
 `;
 const StyledLink = styled("a")`
-  color: #18CA74 !important;
+  color: #18ca74 !important;
   font-weight: 500;
 `;
 
@@ -96,7 +96,7 @@ const StyledIconSwitch = styled("span")`
 `;
 const StyledModal = styled(Modal)`
   .ant-modal-content {
-    background: #C9FDE3;
+    background: #c9fde3;
     position: relative;
     overflow: hidden;
     &::before {
@@ -120,7 +120,8 @@ const StyledModal = styled(Modal)`
       right: -140px;
     }
   }
-  .ant-modal-header, .ant-modal-body {
+  .ant-modal-header,
+  .ant-modal-body {
     background: transparent;
   }
   .ant-modal-footer {
@@ -142,7 +143,7 @@ const ImageWrapper = styled.div`
   border-radius: 50%;
   text-align: center;
   margin-bottom: 15px;
-  background: #BAEAD4;
+  background: #baead4;
 `;
 const StyledImage = styled.img`
   height: 60px;
@@ -153,7 +154,7 @@ const StyledNumber = styled.span`
   font-weight: 500;
   font-size: 16px;
   letter-spacing: 1px;
-  color: #18CA74;
+  color: #18ca74;
 `;
 
 type SignUpFormProps = {
@@ -161,10 +162,7 @@ type SignUpFormProps = {
   animation: boolean;
 };
 
-const SignUpForm: React.SFC<SignUpFormProps> = ({
-  setAnimation,
-  animation,
-}) => {
+const SignUpForm: React.SFC<SignUpFormProps> = ({ setAnimation, animation }) => {
   const [form] = Form.useForm();
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
@@ -172,10 +170,10 @@ const SignUpForm: React.SFC<SignUpFormProps> = ({
   const [enteredNumber, setEnteredNumber] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("+1");
 
-  const lastTwoNums = enteredNumber.substring(enteredNumber.length-2);
+  const lastTwoNums = enteredNumber.substring(enteredNumber.length - 2);
   const closeModal = () => {
     setModalVisible(false);
-  }
+  };
   const layout = {
     labelCol: {
       span: 8,
@@ -186,32 +184,32 @@ const SignUpForm: React.SFC<SignUpFormProps> = ({
     },
   };
 
-//   const [{ data, loading }, makeRequest] = useAxios({
-//     method: "POST",
-//     url: "api/Account/GenerateCode",
-//   });
+  //   const [{ data, loading }, makeRequest] = useAxios({
+  //     method: "POST",
+  //     url: "api/Account/GenerateCode",
+  //   });
 
-//   useEffect(() => {
-//     makeRequest({});
-//   }, []);
+  //   useEffect(() => {
+  //     makeRequest({});
+  //   }, []);
 
-//   const handleResendRequest = () => {
-//     notification.open({
-//       message: "Success",
-//       description: "Verification code has been sent to your number!",
-//     });
-//     makeRequest({data: {
-//       PhoneNumber: enteredNumber.substring(enteredNumber.length-10),
-//       CountryCode: selectedCountry,
-//     }});
-//   }
+  //   const handleResendRequest = () => {
+  //     notification.open({
+  //       message: "Success",
+  //       description: "Verification code has been sent to your number!",
+  //     });
+  //     makeRequest({data: {
+  //       PhoneNumber: enteredNumber.substring(enteredNumber.length-10),
+  //       CountryCode: selectedCountry,
+  //     }});
+  //   }
   const handleCountry = (value: any) => {
     setSelectedCountry(value);
-  }
+  };
   const handleModalVisible = () => {
     setModalVisible(true);
     setIsWithNumber(true);
-  }
+  };
 
   const countrySelector = (
     <Form.Item name="country" noStyle>
@@ -233,38 +231,39 @@ const SignUpForm: React.SFC<SignUpFormProps> = ({
         </Col> */}
       </StyledLogoContainer>
       <Title style={{ fontSize: "1.5em" }}>Sign Up</Title>
-      <Text
-        type="secondary"
-        style={{ fontSize: "15px", marginBottom: "1em", display: "block" }}
-      >
+      <Text type="secondary" style={{ fontSize: "15px", marginBottom: "1em", display: "block" }}>
         Create your free account and Get started.
       </Text>
-      <StyledForm form={form} layout="vertical" size="large" hideRequiredMark >
-       
+      <StyledForm form={form} layout="vertical" size="large" hideRequiredMark>
         <Row gutter={24} style={{ marginBottom: "0" }}>
           <Col span={12}>
             <Form.Item
               label="First Name"
               name="firstName"
-              rules={[{ required: true, message: "Please enter First Name!" },  {
-                pattern: /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/,
-                message: "Please Enter valid name",
-              },]}
-              
+              rules={[
+                { required: true, message: "Please enter First Name!" },
+                {
+                  pattern: /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/,
+                  message: "Please Enter valid name",
+                },
+              ]}
             >
-              <StyledInput style={{textTransform:'capitalize'}} placeholder='Jack' />
+              <StyledInput style={{ textTransform: "capitalize" }} placeholder="Jack" />
             </Form.Item>
           </Col>
           <Col span={12}>
             <Form.Item
               label="Last Name"
               name="lastName"
-              rules={[{ required: true, message: "Please Enter Last Name!" },  {
-                pattern: /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/,
-                message: "Please Enter valid name",
-              },]}
+              rules={[
+                { required: true, message: "Please Enter Last Name!" },
+                {
+                  pattern: /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/,
+                  message: "Please Enter valid name",
+                },
+              ]}
             >
-              <StyledInput style={{textTransform:'capitalize'}} placeholder='Smith' />
+              <StyledInput style={{ textTransform: "capitalize" }} placeholder="Smith" />
             </Form.Item>
           </Col>
         </Row>
@@ -273,10 +272,13 @@ const SignUpForm: React.SFC<SignUpFormProps> = ({
             <Form.Item
               label="E-mail"
               name="email"
-              rules={[{ required: true, message: "Please enter Email" }, {
-                pattern: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                message: "Please Enter valid Email",
-              },]}
+              rules={[
+                { required: true, message: "Please enter Email" },
+                {
+                  pattern: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
+                  message: "Please Enter valid Email",
+                },
+              ]}
             >
               <StyledInput placeholder="name@gmail" />
             </Form.Item>
@@ -285,12 +287,15 @@ const SignUpForm: React.SFC<SignUpFormProps> = ({
             <Form.Item
               label="Phone Number"
               name="phoneNumber"
-              rules={[{ required: true, message: "Please Enter Phone Number" }, {
-                pattern: /^\d{10}$/,
-                message: "Phone number is 10 digit number",
-              },]}
+              rules={[
+                { required: true, message: "Please Enter Phone Number" },
+                {
+                  pattern: /^\d{10}$/,
+                  message: "Phone number is 10 digit number",
+                },
+              ]}
             >
-              <StyledContact addonBefore={countrySelector} placeholder='1234567890' />
+              <StyledContact addonBefore={countrySelector} placeholder="1234567890" />
             </Form.Item>
           </Col>
         </Row>
@@ -300,37 +305,37 @@ const SignUpForm: React.SFC<SignUpFormProps> = ({
             <Form.Item
               label="Password"
               name="password"
-              rules={[{ required: true, message: "Please enter Password" },{
-                pattern:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{6,}$/,
-                message:'Please enter valid password!'
-              }]}
+              rules={[
+                { required: true, message: "Please enter Password" },
+                {
+                  pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{6,}$/,
+                  message: "Please enter valid password!",
+                },
+              ]}
             >
-              <StyledInput type="password"  />
+              <StyledInput type="password" />
             </Form.Item>
           </Col>
           <Col span={12}>
-            <StyledIconSwitch
-              onClick={() => (
-                setPasswordVisible(!passwordVisible)
-              )}
-            >
+            <StyledIconSwitch onClick={() => setPasswordVisible(!passwordVisible)}>
               {passwordVisible ? <EyeOutlined /> : <EyeInvisibleOutlined />}
             </StyledIconSwitch>
             <Form.Item
               label="Confirm"
               name="confirm-password"
-              rules={[{ required: true, message: "Please confirm password" },({ getFieldValue }) => ({
-                validator(rule, value) {
-                  if (!value || getFieldValue('password') === value) {
-                    return Promise.resolve();
-                  }
-                  return Promise.reject('Passwords do not match!');
-                },
-              })]}
+              rules={[
+                { required: true, message: "Please confirm password" },
+                ({ getFieldValue }) => ({
+                  validator(rule, value) {
+                    if (!value || getFieldValue("password") === value) {
+                      return Promise.resolve();
+                    }
+                    return Promise.reject("Passwords do not match!");
+                  },
+                }),
+              ]}
             >
-              <StyledInput
-                type={passwordVisible ? "text" : "password"}
-              />
+              <StyledInput type={passwordVisible ? "text" : "password"} />
             </Form.Item>
           </Col>
         </Row>
@@ -340,18 +345,27 @@ const SignUpForm: React.SFC<SignUpFormProps> = ({
           </Text>
         </Row>
         <Form.Item
-        name="agreement"
-        valuePropName="checked"
-        rules={[
-          { validator:(_, value) => value ? Promise.resolve() : Promise.reject(<span style={{fontSize:'12px'}}>Please indicate that you have read and agree to the Terms and Conditions and Privacy Policy</span>) },
-        ]}
-      >
-        <StyledCheckbox style={{ fontSize: "0.5em" }} >
-        Registering to this website you accept our Terms of Use and our
-            Privacy Policy
-        </StyledCheckbox>
-      </Form.Item>
-      {/* <ActionButton
+          name="agreement"
+          valuePropName="checked"
+          rules={[
+            {
+              validator: (_, value) =>
+                value
+                  ? Promise.resolve()
+                  : Promise.reject(
+                      <span style={{ fontSize: "12px" }}>
+                        Please indicate that you have read and agree to the Terms and Conditions and
+                        Privacy Policy
+                      </span>
+                    ),
+            },
+          ]}
+        >
+          <StyledCheckbox style={{ fontSize: "0.5em" }}>
+            Registering to this website you accept our Terms of Use and our Privacy Policy
+          </StyledCheckbox>
+        </Form.Item>
+        {/* <ActionButton
         size="large"
         style={{
           width: "100%",
@@ -402,20 +416,12 @@ const SignUpForm: React.SFC<SignUpFormProps> = ({
       >
        Sign Up
       </ActionButton> */}
-      <Button type="primary">
-                      Sign Up
-      </Button>
+        <Button type="primary">Sign Up</Button>
       </StyledForm>
-      <Row
-        justify="center"
-        align="middle"
-        style={{ flexDirection: "column", margin: "1em 0" }}
-      >
+      <Row justify="center" align="middle" style={{ flexDirection: "column", margin: "1em 0" }}>
         <Col>
           <Text style={{ fontSize: "1em" }}>Already Registered and verified? </Text>
-          <StyledLink onClick={() => setAnimation(!animation)}>
-            Log In
-          </StyledLink>
+          <StyledLink onClick={() => setAnimation(!animation)}>Log In</StyledLink>
         </Col>
       </Row>
       {/* <Row
@@ -432,42 +438,39 @@ const SignUpForm: React.SFC<SignUpFormProps> = ({
       </Row> */}
 
       <StyledModal
-          width="25%"
-          title="Account Verification"
-          visible={modalVisible}
-          closable={true}
-          onCancel={closeModal}
-          destroyOnClose={true}
-          maskClosable={false}
-        >
-          <Row justify="center">
-            <ImageWrapper>
-              <StyledImage src={Verification} />
-            </ImageWrapper>
-          </Row>
-          <Row justify="center">
-            <h2>One more step...</h2>
-            {
-              isWithNumber === true ?
-              <StyledLabel>Enter your number and your verification code</StyledLabel> :
-              <>
+        width="25%"
+        title="Account Verification"
+        visible={modalVisible}
+        closable={true}
+        onCancel={closeModal}
+        destroyOnClose={true}
+        maskClosable={false}
+      >
+        <Row justify="center">
+          <ImageWrapper>
+            <StyledImage src={Verification} />
+          </ImageWrapper>
+        </Row>
+        <Row justify="center">
+          <h2>One more step...</h2>
+          {isWithNumber === true ? (
+            <StyledLabel>Enter your number and your verification code</StyledLabel>
+          ) : (
+            <>
               <StyledLabel>
-                A verification code has been sent to <br/>
-                <StyledNumber> XXX-XXX-XX{lastTwoNums.length > 0 ? lastTwoNums : "XX"}</StyledNumber>.
-                Please enter<br/> the code to continue.
+                A verification code has been sent to <br />
+                <StyledNumber>
+                  {" "}
+                  XXX-XXX-XX{lastTwoNums.length > 0 ? lastTwoNums : "XX"}
+                </StyledNumber>
+                . Please enter
+                <br /> the code to continue.
               </StyledLabel>
-              
-              </>
-            }
-          </Row>
-          <Form
-            form={form}
-            {...layout}
-            name="verification"
-            hideRequiredMark
-            layout="vertical"
-          >
-            {/* {
+            </>
+          )}
+        </Row>
+        <Form form={form} {...layout} name="verification" hideRequiredMark layout="vertical">
+          {/* {
               isWithNumber &&
               <Form.Item
               label=""
@@ -483,21 +486,21 @@ const SignUpForm: React.SFC<SignUpFormProps> = ({
             </Form.Item>
             } */}
 
-            <Form.Item
-              label=""
-              name="verificationCode"
-              rules={[
-                {
-                  required: true,
-                  message: 'Please Enter Verification Code',
-                },
-              ]}
-            >
-              <StyledInput placeholder='Your code...' size="large" />
-            </Form.Item>
-          </Form>
-          <StyledDiv>
-            {/* <ActionButton
+          <Form.Item
+            label=""
+            name="verificationCode"
+            rules={[
+              {
+                required: true,
+                message: "Please Enter Verification Code",
+              },
+            ]}
+          >
+            <StyledInput placeholder="Your code..." size="large" />
+          </Form.Item>
+        </Form>
+        <StyledDiv>
+          {/* <ActionButton
               method={"Post"}
               url={"api/Account/CheckCode"}
               size="large"
@@ -545,20 +548,18 @@ const SignUpForm: React.SFC<SignUpFormProps> = ({
             >
               Verify Account
             </ActionButton> */}
-          </StyledDiv>
-          <Row
-            justify="center"
-            align="middle"
-            style={{ flexDirection: "column", margin: "1em 0" }}
-          >
-            <Col>
-              <Text style={{ fontSize: "1em", fontWeight: 500, }}>Didn't recieve your verification code? </Text>
-              {/* <StyledLink onClick={handleResendRequest}>
+        </StyledDiv>
+        <Row justify="center" align="middle" style={{ flexDirection: "column", margin: "1em 0" }}>
+          <Col>
+            <Text style={{ fontSize: "1em", fontWeight: 500 }}>
+              Didn't recieve your verification code?{" "}
+            </Text>
+            {/* <StyledLink onClick={handleResendRequest}>
                 Resend Code
               </StyledLink> */}
-            </Col>
-          </Row>
-        </StyledModal>
+          </Col>
+        </Row>
+      </StyledModal>
     </StyledLoginForm>
   );
 };
